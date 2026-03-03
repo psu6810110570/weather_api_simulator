@@ -1,7 +1,7 @@
 # 🌤️ Weather API Fetcher Simulator (Python Threading)
 
-**ผู้จัดทำ:** นายชินดนัย อภิบุญญา (รหัสนักศึกษา: 6810110570)  
-**รายวิชา:** 240-123 Module Data Structure, Algorithms and Programming  
+### **ผู้จัดทำ:** นายชินดนัย อภิบุญญา รหัสนักศึกษา: 6810110570  
+### **รายวิชา:** 240-123 Module Data Structure, Algorithms and Programming  
 
 ---
 
@@ -23,7 +23,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;จากการรันโปรแกรมเพื่อเปรียบเทียบการทำงานทั้ง 2 รูปแบบ ได้ผลลัพธ์ความเร็วที่แตกต่างกันอย่างชัดเจนดังนี้:
 
 <div align="center">
-  <h3>📊 ผลการทดลองเปรียบเทียบการทำงาน</h3>
+  <h3> ผลการทดลองเปรียบเทียบการทำงาน</h3>
   <br>
   
   <table border="0">
@@ -31,38 +31,36 @@
       <td align="center" valign="top" style="padding: 10px;">
         <img src="images/sequential_weather1.png" width="500" style="border-radius: 8px; border: 1px solid #ddd;"><br>
         <br>
-        <sub><b>ภาพที่ 1 ทดสอบ Sequential 1 </b></sub>
+        <sub><b>ภาพที่ 1 ทดสอบ Sequential รอบ 1 </b></sub>
       </td>
       <td align="center" valign="top" style="padding: 10px;">
         <img src="images/threading_weather1.png" width="500" style="border-radius: 8px; border: 1px solid #ddd;"><br>
         <br>
-        <sub><b>ภาพที่ 2 ทดสอบ Threading 1</b></sub>
+        <sub><b>ภาพที่ 2 ทดสอบ Threading รอบ 1</b></sub>
       </td>
     </tr>
-    
     <tr>
       <td align="center" valign="top" style="padding: 10px;">
         <img src="images/sequential_weather2.png" width="500" style="border-radius: 8px; border: 1px solid #ddd;"><br>
         <br>
-        <sub><b>ภาพที่ 3 ทดสอบ Sequential 2</b></sub>
+        <sub><b>ภาพที่ 3 ทดสอบ Sequential รอบ 2</b></sub>
       </td>
       <td align="center" valign="top" style="padding: 10px;">
         <img src="images/threading_weather2.png" width="500" style="border-radius: 8px; border: 1px solid #ddd;"><br>
         <br>
-        <sub><b>ภาพที่ 4 ทดสอบ Threading 2</b></sub>
+        <sub><b>ภาพที่ 4 ทดสอบ Threading รอบ 2</b></sub>
       </td>
     </tr>
-    
     <tr>
       <td align="center" valign="top" style="padding: 10px;">
         <img src="images/sequential_weather3.png" width="500" style="border-radius: 8px; border: 1px solid #ddd;"><br>
         <br>
-        <sub><b>ภาพที่ 5 ทดสอบ Sequential 3</b></sub>
+        <sub><b>ภาพที่ 5 ทดสอบ Sequential รอบ 3</b></sub>
       </td>
       <td align="center" valign="top" style="padding: 10px;">
         <img src="images/threading_weather3.png" width="500" style="border-radius: 8px; border: 1px solid #ddd;"><br>
         <br>
-        <sub><b>ภาพที่ 6 ทดสอบ Threading 3</b></sub>
+        <sub><b>ภาพที่ 6 ทดสอบ Threading รอบ 3</b></sub>
       </td>
     </tr>
   </table>
@@ -81,9 +79,10 @@
 
 
 ## ⚙️ ทำไมถึงใช้เครื่องมือ Threading ในไอเดียนี้?
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;งานดึงข้อมูลจากอินเทอร์เน็ตจัดเป็นงานประเภท **I/O Bound** (Input/Output Bound) ซึ่ง CPU แทบไม่ได้ออกแรงคำนวณอะไรเลย แต่ต้องเสียเวลารอข้อมูลเฉยๆ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;งานดึงข้อมูลจากอินเทอร์เน็ตจัดเป็นงานประเภท **I/O Bound** (Input/Output Bound) ซึ่ง CPU แทบไม่ได้คำนวณอะไรเลย แต่ต้องเสียเวลารอข้อมูลเฉยๆ 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;การใช้ **Threading** จึงตอบโจทย์ที่สุด เพราะมันอนุญาตให้โปรแกรม "สลับ" ไปทำงานอื่น (เช่น ไปสั่งดึงข้อมูลเมืองถัดไป) ในระหว่างที่กำลังรอข้อมูลของเมืองแรกอยู่ได้ ทำให้ไม่ต้องรอคิวทำงานทีละอัน (Sequential) 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;การใช้ **Threading** จึงตอบโจทย์ที่สุด เพราะมันอนุญาตให้โปรแกรม "สลับ" ไปทำงานอื่น (เช่น ไปสั่งดึงข้อมูลเมืองถัดไป) 
+ในระหว่างที่กำลังรอข้อมูลของเมืองแรกอยู่ได้ ทำให้ไม่ต้องรอคิวทำงานทีละอัน (Sequential) 
 
 
 ## 🔄 วิธีการทำงานของโปรแกรม
