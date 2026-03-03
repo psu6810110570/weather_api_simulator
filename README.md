@@ -22,20 +22,51 @@
 ## 📊 สรุปผลการทดลอง
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;จากการรันโปรแกรมเพื่อเปรียบเทียบการทำงานทั้ง 2 รูปแบบ ได้ผลลัพธ์ความเร็วที่แตกต่างกันอย่างชัดเจนดังนี้:
 
-<table>
-  <tr>
-    <td><img src="images/sequential_weather1.png" width="300"></td>
-    <td><img src="images/threading_weather1.png" width="300"></td>
-  </tr>
-  <tr>
-    <td><img src="images/sequential_weather2.png" width="300"></td>
-    <td><img src="images/threading_weather2.png" width="300"></td>
-  </tr>
+<div align="center">
+  <h3>📊 ผลการทดลองเปรียบเทียบการทำงาน</h3>
+  <br>
+  
+  <table border="0">
     <tr>
-    <td><img src="images/sequential_weather3.png" width="300"></td>
-    <td><img src="images/threading_weather3.png" width="300"></td>
-  </tr>
-</table>
+      <td align="center" valign="top" style="padding: 10px;">
+        <img src="images/sequential_weather1.png" width="500" style="border-radius: 8px; border: 1px solid #ddd;"><br>
+        <br>
+        <sub><b>ภาพที่ 1 ทดสอบ Sequential 1 </b></sub>
+      </td>
+      <td align="center" valign="top" style="padding: 10px;">
+        <img src="images/threading_weather1.png" width="500" style="border-radius: 8px; border: 1px solid #ddd;"><br>
+        <br>
+        <sub><b>ภาพที่ 2 ทดสอบ Threading 1</b></sub>
+      </td>
+    </tr>
+    
+    <tr>
+      <td align="center" valign="top" style="padding: 10px;">
+        <img src="images/sequential_weather2.png" width="500" style="border-radius: 8px; border: 1px solid #ddd;"><br>
+        <br>
+        <sub><b>ภาพที่ 3 ทดสอบ Sequential 2</b></sub>
+      </td>
+      <td align="center" valign="top" style="padding: 10px;">
+        <img src="images/threading_weather2.png" width="500" style="border-radius: 8px; border: 1px solid #ddd;"><br>
+        <br>
+        <sub><b>ภาพที่ 4 ทดสอบ Threading 2</b></sub>
+      </td>
+    </tr>
+    
+    <tr>
+      <td align="center" valign="top" style="padding: 10px;">
+        <img src="images/sequential_weather3.png" width="500" style="border-radius: 8px; border: 1px solid #ddd;"><br>
+        <br>
+        <sub><b>ภาพที่ 5 ทดสอบ Sequential 3</b></sub>
+      </td>
+      <td align="center" valign="top" style="padding: 10px;">
+        <img src="images/threading_weather3.png" width="500" style="border-radius: 8px; border: 1px solid #ddd;"><br>
+        <br>
+        <sub><b>ภาพที่ 6 ทดสอบ Threading 3</b></sub>
+      </td>
+    </tr>
+  </table>
+</div>
 
 * **🔍 วิเคราะห์ผลลัพธ์**
     * *Sequential:* ทดสอบ 3 รอบ เวลาที่ใช้ คือ 8.18, 9.95, 10.37 วินาที เป็นผลรวมเวลา ของแต่ละรอบ โดยจะเป็นการโหลดทุกเมืองรวมกัน (T1 + T2 + T3 + T4 + T5) และค่าเฉลี่ย คือ 9.5 วินาที
