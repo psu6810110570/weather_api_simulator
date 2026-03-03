@@ -48,3 +48,9 @@ def run_threading(cities):
         t.join()
         
     print(f"--- 🚀 จบแบบ Threading ใช้เวลาทั้งหมด: {time.time() - start_time:.2f} วินาที ---\n")
+
+if __name__ == "__main__":
+    target_cities = get_cities()
+    
+    run_sequential(target_cities)
+    run_threading(target_cities)
