@@ -21,7 +21,7 @@ def fetch_weather_data(city):
     
     print(f"[{time.strftime('%H:%M:%S')}] ✅ {city}: อุณหภูมิ {temp}°C (ใช้เวลาโหลด {delay:.2f} วินาที)")
 
-    # ทดสอบรันแบบปกติ (ทำงานทีละเมือง)
+    # รันแบบปกติ (ทำงานทีละเมือง)
 def run_sequential(cities):
     print("\n--- 🐢 เริ่มการทำงานแบบปกติ (Sequential) ---")
     start_time = time.time()
@@ -30,3 +30,21 @@ def run_sequential(cities):
         fetch_weather_data(city)
         
     print(f"--- 🐢 จบแบบปกติ ใช้เวลาทั้งหมด: {time.time() - start_time:.2f} วินาที ---\n")
+
+    # รันแบบ Threading (ทำงานพร้อมกัน)
+def run_threading(cities):
+    print("--- 🚀 เริ่มการทำงานแบบ Threading ---")
+    start_time = time.time()
+    threads = []
+    
+    # สร้างและเริ่ม Thread ให้แต่ละเมือง
+    for city in cities:
+        t = threading.Thread(target=fetch_weather_data, args=(city,))
+        threads.append(t)
+        t.start()
+        
+    # รอให้ทุก Thread ทำงานเสร็จสมบูรณ์
+    for t in threads:
+        t.join()
+        
+    print(f"--- 🚀 จบแบบ Threading ใช้เวลาทั้งหมด: {time.time() - start_time:.2f} วินาที ---\n")
