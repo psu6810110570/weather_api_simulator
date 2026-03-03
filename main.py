@@ -20,3 +20,13 @@ def fetch_weather_data(city):
     temp = random.randint(15, 35) # สุ่มอุณหภูมิ
     
     print(f"[{time.strftime('%H:%M:%S')}] ✅ {city}: อุณหภูมิ {temp}°C (ใช้เวลาโหลด {delay:.2f} วินาที)")
+
+    # ทดสอบรันแบบปกติ (ทำงานทีละเมือง)
+def run_sequential(cities):
+    print("\n--- 🐢 เริ่มการทำงานแบบปกติ (Sequential) ---")
+    start_time = time.time()
+    
+    for city in cities:
+        fetch_weather_data(city)
+        
+    print(f"--- 🐢 จบแบบปกติ ใช้เวลาทั้งหมด: {time.time() - start_time:.2f} วินาที ---\n")
